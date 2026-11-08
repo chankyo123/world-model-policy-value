@@ -6,7 +6,7 @@
 <p align="center"><strong>CoRL 2026 · Do Robots Need World Models? Workshop</strong></p>
 <p align="center">Chankyo Kim · Yana Wei · Rowan Thomas McAllister · Maani Ghaffari<br>University of Michigan · Johns Hopkins University · Toyota Research Institute</p>
 <p align="center">
-  <a href="https://world-model-policy-value.ckkim10.chatgpt.site"><strong>Project website ↗</strong></a> &nbsp;·&nbsp;
+  <a href="https://chankyo123.github.io/world-model-policy-value"><strong>Project website ↗</strong></a> &nbsp;·&nbsp;
   <a href="https://openreview.net/forum?id=iEFLlkP566">Paper</a> &nbsp;·&nbsp;
   <a href="public/downloads/poster.pdf">Poster</a> &nbsp;·&nbsp;
   <a href="public/data/policy-value.csv">Result data</a> &nbsp;·&nbsp;
@@ -17,7 +17,7 @@
 
 ### The idea
 
-**A better policy can gain more from identical world-model advice.** We argue that a world model should be evaluated together with the policy that acts on its predictions. Better task performance does not necessarily imply less value from prediction.
+**A better policy can gain more from identical world-model advice.** We argue that a world model should be evaluated together with the policy that acts on its predictions. A policy with better baseline performance can gain more from the same advice.
 
 This repository contains the project website, frozen evaluation summaries, audited simulation videos, paper/poster PDFs and a script to reproduce the result plots.
 
@@ -55,10 +55,10 @@ In repeated selection over 1,024 cases, BC300 gains **8.73 mm** from WM selectio
 
 |                                             Greater gain through reduced harm                                             |                                             Smaller benefit from the same advice                                              |
 | :-----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| [![Reduced-harm example](public/media/replay-rising.png)](https://world-model-policy-value.ckkim10.chatgpt.site/#replays) | [![Smaller-benefit example](public/media/replay-falling.png)](https://world-model-policy-value.ckkim10.chatgpt.site/#replays) |
+| [![Reduced-harm example](public/media/replay-rising.png)](https://chankyo123.github.io/world-model-policy-value/#replays) | [![Smaller-benefit example](public/media/replay-falling.png)](https://chankyo123.github.io/world-model-policy-value/#replays) |
 |                                                   Gain: −36.3 → +2.6 mm                                                   |                                                    Gain: +116.0 → +71.8 mm                                                    |
 
-[Watch both interactive replays on the project website ↗](https://world-model-policy-value.ckkim10.chatgpt.site/#replays)
+[Watch both interactive replays on the project website ↗](https://chankyo123.github.io/world-model-policy-value/#replays)
 
 Actual simulated trajectories, not predicted imagery. These are post-hoc examples from a separate exploratory study. The first example has a worse BC300 baseline; it illustrates reduced harm, not the better-baseline primary result. Both signs of gain change are retained.
 
@@ -80,13 +80,25 @@ npm ci
 npm run dev
 ```
 
-Open the printed local URL (normally `http://localhost:5173`). On machines with exhausted file watchers, use `CHOKIDAR_USEPOLLING=true npm run dev`.
+Open `http://localhost:3000/world-model-policy-value/`.
 
 ```bash
 npm run build
+npm run typecheck
+npm run verify
 ```
 
-The site uses Vinext/React. All scientific content, media and fonts are local assets. See [evaluation artifact documentation](research/README.md) to reproduce the plots from the CSV. This package does not include the full experiment pipeline or pretrained checkpoints.
+The site uses Next.js/React and exports static HTML, CSS and JavaScript to `out/`. GitHub Pages serves the export without a backend. All scientific content, media and fonts are local assets. See [evaluation artifact documentation](research/README.md) to reproduce the plots from the CSV. This package does not include the full experiment pipeline or pretrained checkpoints.
+
+### Publishing and updates
+
+GitHub Actions builds, verifies, and deploys the site after a push to `main`. In repository **Settings → Pages**, set **Source** to **GitHub Actions** once. A failed validation prevents deployment.
+
+- Edit the research narrative and interactions in `components/research/project-page.tsx`.
+- Edit the layout and responsive styling in `app/project.css`.
+- Replace PDFs in `public/downloads/`, videos/images in `public/media/`, and update `public/data/provenance.json` when an audited artifact changes.
+- The bundled poster is **V8**; the manuscript is **V17**.
+- Shared hosting URLs and the repository subpath are in `lib/site.ts`. Update this file if the repository name changes.
 
 ### Evidence in context
 

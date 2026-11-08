@@ -14,8 +14,9 @@ import {
   X,
 } from "lucide-react";
 import results from "./results.json";
+import { asset, SITE_URL, REPO_URL } from "@/lib/site";
 const PAPER = results.paperUrl;
-const SITE = "https://world-model-policy-value.ckkim10.chatgpt.site";
+const SITE = SITE_URL;
 const citation = `@inproceedings{kim2026worldmodelvalue,
   title = {World-Model Value Depends on the Policy That Acts},
   author = {Kim, Chankyo and Wei, Yana and McAllister, Rowan Thomas and Ghaffari, Maani},
@@ -251,6 +252,12 @@ export default function ProjectPage() {
               <a className="button button-dark" href="#evidence">
                 Explore the evidence <ArrowRight size={18} />
               </a>
+              <a className="text-link" href={PAPER} target="_blank" rel="noreferrer">
+                <FileText size={16} /> Paper
+              </a>
+              <a className="text-link" href={REPO_URL} target="_blank" rel="noreferrer">
+                <Code2 size={16} /> GitHub
+              </a>
               <a className="text-link" href="#replays">
                 <Play size={15} fill="currentColor" /> Watch the robot replays
               </a>
@@ -265,7 +272,7 @@ export default function ProjectPage() {
             </div>
             <div className="robot-scene">
               <img
-                src="/media/task.webp"
+                src={asset("/media/task.webp")}
                 width="400"
                 height="400"
                 alt="A red robot arm above a red object and a green goal marker in a simulated pushing task."
@@ -312,7 +319,7 @@ export default function ProjectPage() {
             <span>
               <sup>1</sup>
               <img
-                src="/media/umich.png"
+                src={asset("/media/umich.png")}
                 alt="University of Michigan, Ann Arbor"
                 width="208"
                 height="34"
@@ -321,7 +328,7 @@ export default function ProjectPage() {
             <span>
               <sup>2</sup>
               <img
-                src="/media/jhu.jpg"
+                src={asset("/media/jhu.jpg")}
                 alt="Johns Hopkins University"
                 width="163"
                 height="49"
@@ -330,7 +337,7 @@ export default function ProjectPage() {
             <span>
               <sup>3</sup>
               <img
-                src="/media/tri.png"
+                src={asset("/media/tri.png")}
                 alt="Toyota Research Institute"
                 width="143"
                 height="58"
@@ -347,16 +354,16 @@ export default function ProjectPage() {
               as the actions it supports.
             </h2>
             <p>
-              As a policy improves, does it necessarily need prediction less? We
-              argue that task performance and the ability to benefit from advice
-              need not improve in the same way.
+              Our position: evaluate world models together with the policies
+              that act on their predictions. A policy with better baseline
+              performance can gain more from the same advice.
             </p>
           </div>
           <div className="protocol">
             <div className="protocol-start">
               <span className="step-count">START TOGETHER</span>
               <img
-                src="/media/task.webp"
+                src={asset("/media/task.webp")}
                 alt="Identical simulator state for both executions"
                 width="96"
                 height="96"
@@ -572,7 +579,7 @@ export default function ProjectPage() {
                   ? "512 shared states · One five-command intervention · Common baseline commands followed by each tested policy."
                   : "1,024 cases · Repeated selection at visited states · Baseline: each BC policy acts alone throughout."}{" "}
                 Bars show descriptive paired 95% intervals.{" "}
-                <a href="/data/policy-value.csv" download>
+                <a href={asset("/data/policy-value.csv")} download>
                   Download all 36 estimates ↗
                 </a>
               </p>
@@ -627,16 +634,16 @@ export default function ProjectPage() {
                 controls
                 playsInline
                 preload="metadata"
-                poster={`/media/replay-${replay}.png`}
+                poster={asset(`/media/replay-${replay}.png`)}
                 aria-label={
                   replay === "rising"
                     ? "Reduced-harm example: four paired robot executions"
                     : "Smaller-benefit example: four paired robot executions"
                 }
               >
-                <source src={`/media/replay-${replay}.mp4`} type="video/mp4" />
+                <source src={asset(`/media/replay-${replay}.mp4`)} type="video/mp4" />
                 Your browser does not support embedded video.{" "}
-                <a href={`/media/replay-${replay}.mp4`}>Download the replay</a>.
+                <a href={asset(`/media/replay-${replay}.mp4`)}>Download the replay</a>.
               </video>
               <p className="video-footnote">
                 Recorded simulator trajectories, not predicted images. Video
@@ -824,15 +831,15 @@ export default function ProjectPage() {
           <div className="container">
             <p className="eyebrow">THE TAKEAWAY</p>
             <h2>
-              Evaluate the pair.
+              Evaluate world models
               <br />
-              <em>Not just the predictor.</em>
+              <em>with the policies that act.</em>
             </h2>
             <div className="takeaway-bottom">
               <p>
-                Measure baseline performance and advice gain separately. Compare
-                against selection without forecasts. Follow the consequences
-                through final task outcomes.
+                Measure how well the policy performs on its own, how much advice
+                improves its actions, and what forecasting adds to action
+                selection. Evaluate the outcome after the policy resumes control.
               </p>
               <div className="scope-note">
                 <strong>Evidence in context</strong>
@@ -857,7 +864,7 @@ export default function ProjectPage() {
             </p>
           </div>
           <div className="resource-list">
-            <a href="/downloads/paper.pdf" target="_blank" rel="noreferrer">
+            <a href={asset("/downloads/paper.pdf")} target="_blank" rel="noreferrer">
               <FileText />
               <div>
                 <strong>Read the paper</strong>
@@ -865,7 +872,7 @@ export default function ProjectPage() {
               </div>
               <ArrowUpRight />
             </a>
-            <a href="/downloads/poster.pdf" target="_blank" rel="noreferrer">
+            <a href={asset("/downloads/poster.pdf")} target="_blank" rel="noreferrer">
               <FileText />
               <div>
                 <strong>Explore the poster</strong>
@@ -875,10 +882,10 @@ export default function ProjectPage() {
               </div>
               <ArrowUpRight />
             </a>
-            <a href="/downloads/project-source.zip" download>
+            <a href={REPO_URL} target="_blank" rel="noreferrer">
               <Code2 />
               <div>
-                <strong>Project source & evaluation artifacts</strong>
+                <strong>GitHub: source & evaluation artifacts</strong>
                 <span>
                   Website, illustrated README, result data, and plot
                   reproduction
@@ -931,7 +938,7 @@ export default function ProjectPage() {
           >
             Share on LinkedIn <ArrowUpRight size={14} />
           </a>
-          <a href="/data/results.json" download>
+          <a href={asset("/data/results.json")} download>
             Results JSON <Download size={14} />
           </a>
         </div>
