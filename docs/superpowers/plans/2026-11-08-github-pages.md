@@ -14,9 +14,11 @@
 ## Tasks
 - [x] Convert package/configuration, remove unused hosting scaffold, fix asset paths and metadata, update position/README/poster.
 - [x] Add static-export verification and GitHub Actions; build, typecheck and exercise the exported page in desktop/mobile browsers.
-- [ ] Review the migration, upload to the empty repository, inspect deployment, verify live assets and update the LinkedIn draft.
+- [x] Review the migration, upload to the empty repository, inspect deployment, verify live assets and update the LinkedIn draft.
 
 ## Execution notes
 Work in the already separate clean release checkout; the original managed-site checkout remains available. Build and browser checks are the relevant verification for this hosting migration. No new experiment or change to numerical results.
 
 Validation: production static build and typecheck pass. Static audit passes for 34 references and 9 artifact hashes. Browser checks pass at 1440, 768, 390, and 320 pixels: no page/request errors or overflow; policy/chart/video switching, video playback, clipboard, mobile navigation, reduced motion, downloads, and metadata verified.
+
+Publication verified: https://chankyo123.github.io/world-model-policy-value/ returns HTTP 200. GitHub Actions run 42512603420 succeeded. The same desktop/mobile interaction suite passes on the public site. Live paper/poster/data/video hashes match the verified export. Independent final review found no blocking or actionable minor issues.
