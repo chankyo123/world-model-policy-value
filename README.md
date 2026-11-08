@@ -97,7 +97,7 @@ GitHub Actions builds, verifies, and deploys the site after a push to `main`. In
 - Edit the research narrative and interactions in `components/research/project-page.tsx`.
 - Edit the layout and responsive styling in `app/project.css`.
 - Replace PDFs in `public/downloads/`, videos/images in `public/media/`, and update `public/data/provenance.json` when an audited artifact changes.
-- The bundled poster is **V8**; the manuscript is **V17**.
+- The bundled poster is **V9**; the manuscript is **V17**.
 - Shared hosting URLs and the repository subpath are in `lib/site.ts`. Update this file if the repository name changes.
 
 ### Evidence in context
