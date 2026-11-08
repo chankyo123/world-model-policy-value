@@ -405,6 +405,16 @@ h3 {
   letter-spacing: -0.4px;
   font-weight: 550;
 }
+.protocol-description {
+  max-width: 900px;
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.protocol-description strong {
+  color: var(--ink);
+}
 .protocol {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -756,12 +766,36 @@ details p {
   width: 15px;
   height: 3px;
 }
+.chart-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.chart-scroll-hint {
+  display: none;
+}
 .curve-chart {
   display: block;
   width: 100%;
   height: auto;
   margin-top: 14px;
   overflow: visible;
+}
+@media (max-width: 700px) {
+  .chart-scroll .curve-chart {
+    min-width: 680px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .chart-scroll .chart-tick,
+  .chart-scroll .chart-label {
+    font-size: 16px;
+  }
+  .chart-scroll-hint {
+    display: block;
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
 }
 .chart-tick {
   font-size: 12px;

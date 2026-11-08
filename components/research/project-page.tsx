@@ -244,9 +244,9 @@ export default function ProjectPage() {
               <br className="desktop-break" /> on the Policy That Acts
             </p>
             <p className="hero-description">
-              A better robot policy can gain <strong>more</strong> from
-              identical world-model advice. To understand a prediction’s value,
-              look at the policy that acts on it.
+              A robot policy with better baseline performance can gain
+              <strong> more</strong> from identical world-model advice.
+              Evaluate predictions together with the policy that acts on them.
             </p>
             <div className="hero-actions">
               <a className="button button-dark" href="#evidence">
@@ -359,6 +359,14 @@ export default function ProjectPage() {
               performance can gain more from the same advice.
             </p>
           </div>
+          <p className="protocol-description">
+            Here, <strong>advice means five robot actions</strong> chosen using
+            world-model predictions. After those actions, the tested policy
+            observes the new state and controls the robot for the rest of the
+            episode. BC means behavior cloning: learning to imitate expert
+            actions. BC100 and BC300 are checkpoints of the same policy after
+            100 and 300 training updates.
+          </p>
           <div className="protocol">
             <div className="protocol-start">
               <span className="step-count">START TOGETHER</span>
@@ -407,21 +415,22 @@ export default function ProjectPage() {
             </p>
             <p>
               <strong>What changes?</strong> The policy that completes both
-              executions. BC means behavior cloning; checkpoint numbers count
-              training updates.
+              executions. It observes the robot’s state and generates a new
+              action sequence every five steps.
             </p>
             <p>
               <strong>What is measured?</strong> Object–goal distance, averaged
               over the last ten steps of a 100-step episode. Smaller distance is
-              better.
+              better. Averaging reduces sensitivity to a single final frame.
             </p>
           </div>
           <details className="method-details">
             <summary>How does the world model choose advice?</summary>
             <p>
-              A frozen pretrained JEPA world model forecasts the outcomes of
-              nine 20-step candidate plans. A separately learned scorer
-              evaluates their outcomes. We execute the first five commands of
+              A frozen pretrained JEPA world model predicts future visual and
+              robot-state features for nine 20-step candidate plans. A
+              separately learned scorer uses these predictions to rank the
+              plans. We execute the first five commands of
               the selected plan and then return control to the tested policy,
               which receives new observations. The comparison measures the
               effect of the complete subsequent execution, including feedback
@@ -486,7 +495,7 @@ export default function ProjectPage() {
                   </div>
                 </div>
                 <p className="comparison-subtitle">
-                  Same advice. Different continuation.
+                  The first five actions stay fixed. The policy that acts next changes.
                 </p>
                 <div className="distance-bars" aria-live="polite">
                   <div className="bar-label">
@@ -573,7 +582,17 @@ export default function ProjectPage() {
                   </span>
                 ))}
               </div>
-              <CurveChart study={study} />
+              <div
+                className="chart-scroll"
+                role="region"
+                aria-label="Advice gain across six policies; scroll horizontally on small screens"
+                tabIndex={0}
+              >
+                <CurveChart study={study} />
+              </div>
+              <p className="chart-scroll-hint">
+                Scroll horizontally to see all six checkpoints.
+              </p>
               <p className="chart-caption">
                 {study === "fixed"
                   ? "512 shared states · One five-command intervention · Common baseline commands followed by each tested policy."
@@ -586,12 +605,15 @@ export default function ProjectPage() {
             </div>
             <div className="control-finding">
               <span className="control-marker">A NECESSARY CONTROL</span>
-              <h3>Intervention benefit ≠ predictive advantage.</h3>
+              <h3>How much does forecasting add?</h3>
               <p>
                 During repeated selection at BC300, world-model selection gains{" "}
-                <strong>8.73 mm</strong>; current-feature selection gains{" "}
-                <strong>18.04 mm</strong>. Both help, but improvement alone does
-                not establish an advantage from forecasting.
+                <strong>8.73 mm</strong>. Selecting actions from current
+                observations, without predicting future features, gains{" "}
+                <strong>18.04 mm</strong>. Both improve control; the method
+                using current observations performs better in this setting.
+                This comparison separates the benefit of changing actions
+                from the additional value of forecasting.
               </p>
               <details>
                 <summary>
@@ -698,6 +720,7 @@ export default function ProjectPage() {
                 </p>
                 <div
                   className="population-bar"
+                  role="img"
                   aria-label="252 increased, 177 decreased, 83 unchanged"
                 >
                   <span style={{ width: "49.21875%" }} />
@@ -786,14 +809,14 @@ export default function ProjectPage() {
             <article className="diagnostic">
               <p className="study-tag">EXPLORATORY · 512 REUSED STATES</p>
               <h3>
-                The forecast must match
+                Matching forecasts to actions
                 <br />
-                the action being evaluated.
+                improves selection.
               </h3>
               <p>
-                Compare correctly matched forecasts with shuffled
-                action–forecast pairs, and with scoring based on current
-                features.
+                Give each candidate plan its own forecast, or replace it with
+                another candidate’s forecast. Compare both with a scorer that
+                uses current observations.
               </p>
               <div className="matching-bars">
                 {[
@@ -837,9 +860,9 @@ export default function ProjectPage() {
             </h2>
             <div className="takeaway-bottom">
               <p>
-                Measure how well the policy performs on its own, how much advice
-                improves its actions, and what forecasting adds to action
-                selection. Evaluate the outcome after the policy resumes control.
+                Measure baseline control, the gain from selected actions, and
+                the additional gain from forecasting. Evaluate the final
+                outcome after the policy resumes control.
               </p>
               <div className="scope-note">
                 <strong>Evidence in context</strong>
@@ -910,7 +933,7 @@ export default function ProjectPage() {
                 {copied ? "Copied" : "Copy BibTeX"}
               </button>
             </div>
-            <pre>
+            <pre role="region" tabIndex={0} aria-label="BibTeX citation">
               <code>{citation}</code>
             </pre>
             <p className="copy-status" aria-live="polite">
