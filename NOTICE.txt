@@ -1,0 +1,7 @@
+Research manuscript and scientific media: Chankyo Kim, Yana Wei, Rowan Thomas McAllister, Maani Ghaffari. Consult the linked paper and source projects for their terms. No blanket license is assigned by this package.
+
+DM Sans and Newsreader are distributed under the SIL Open Font License; see public/fonts/*-OFL.txt. Institutional marks identify author affiliations and do not imply endorsement.
+
+The task thumbnail is a crop of an existing actual simulator frame. Robot videos retain the audited replay content, including both gain-change signs. No synthetic image is presented as an experimental observation.
+
+Design inspiration: Diffusion Policy (https://diffusion-policy.cs.columbia.edu/) and Physical Intelligence (https://www.pi.website/blog/pi0). Neither source's prose, video or illustrations are copied.

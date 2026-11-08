@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using these evaluation artifacts."
+title: "World-Model Value Depends on the Policy That Acts"
+type: article
+authors:
+  - family-names: Kim
+    given-names: Chankyo
+  - family-names: Wei
+    given-names: Yana
+  - family-names: McAllister
+    given-names: Rowan Thomas
+  - family-names: Ghaffari
+    given-names: Maani
+year: 2026
+url: "https://openreview.net/forum?id=iEFLlkP566"

@@ -1,0 +1,50 @@
+{
+  "description": "Public artifact checksums. Robot videos are audited simulator replays; no generated imagery. The task thumbnail crops the original simulator frame without changing its content.",
+  "artifacts": [
+    {
+      "file": "downloads/paper.pdf",
+      "sha256": "ee4b18b8a182477adf1aa18f1c1d6d36b459ff9a902908ac56cf868eb3d16aaa",
+      "source": "CoRL53_CAMERA_READY_FINAL_V17.pdf"
+    },
+    {
+      "file": "downloads/poster.pdf",
+      "sha256": "2563edb1c9d5d4af995182f5cfd43b80e0f8c7706a005a297677734a345ec1a0",
+      "source": "CoRL53_POSTER_A0_V5.pdf"
+    },
+    {
+      "file": "data/policy-value.csv",
+      "sha256": "d3a68b0837ce46faca0d43f3db28165f0025c8607fe03f8452f1d5e7b590f310",
+      "source": "figure_policy_value.csv"
+    },
+    {
+      "file": "media/umich.png",
+      "sha256": "99511d8263a7652a0b479493184470ce504728d1617d64f2b67438323bdf3e1c",
+      "source": "umich.png"
+    },
+    {
+      "file": "media/jhu.jpg",
+      "sha256": "f02a9495753fe53354f175b689bdcb71a74bb7e08c6d26bff6c4cbc172379c1a",
+      "source": "jhu.jpg"
+    },
+    {
+      "file": "media/replay-rising.png",
+      "sha256": "d8b3a2111c106b34cedcc254ba08345c9d8e18b368447fa81f13c69842d81993",
+      "source": "rising_example_step100.png"
+    },
+    {
+      "file": "media/replay-falling.png",
+      "sha256": "d72597ebec0bed83d3b064111aaa4d243fd3e4891a897d2e19114bfa06553ae4",
+      "source": "falling_example_step100.png"
+    },
+    {
+      "file": "media/replay-rising.mp4",
+      "sha256": "740d4a5870e53bf5d7db0d409d63e387f6d399ee9ec5b8d41b9e5847715cadea",
+      "source": "rising_example_slow4x.mp4"
+    },
+    {
+      "file": "media/replay-falling.mp4",
+      "sha256": "8e379fe0a316381fb571bb95016aa90f763c73827c2792510d68ef2d0e4949e8",
+      "source": "falling_example_slow4x.mp4"
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+{
+  "title": "World-Model Value Depends on the Policy That Acts",
+  "paperUrl": "https://openreview.net/forum?id=iEFLlkP566",
+  "checkpoints": [
+    100,
+    300,
+    375,
+    425,
+    1000,
+    10000
+  ],
+  "fixed": {
+    "n": 512,
+    "baseline": {
+      "100": 143.5136516677795,
+      "300": 121.07998908246921
+    },
+    "gainChange": {
+      "component": "FS2",
+      "name": "FS2_I_WM",
+      "N": 512,
+      "mean_mm": 11.497524721428778,
+      "ci95_mm": [
+        6.8033380872421665,
+        16.24876438437374
+      ],
+      "family_lower_mm": 3.9196148931828594
+    },
+    "baselineImprovement": {
+      "component": "FS2",
+      "name": "FS2_base_improvement",
+      "N": 512,
+      "mean_mm": 22.43366258531029,
+      "ci95_mm": [
+        16.782969653960773,
+        28.10638371559586
+      ],
+      "family_lower_mm": 13.384959648619166
+    }
+  },
+  "curves": [
+    {
+      "study": "fixed",
+      "update": 100,
+      "arm": "WM",
+      "gain": -3.128838949343125,
+      "low": -6.591882027031168,
+      "high": 0.2920960059296663
+    },
+    {
+      "study": "fixed",
+      "update": 300,
+      "arm": "WM",
+      "gain": 8.368685772085655,
+      "low": 4.56105689668141,
+      "high": 12.26643183192482
+    },
+    {
+      "study": "fixed",
+      "update": 375,
+      "arm": "WM",
+      "gain": 9.595773674604526,
+      "low": 5.500769702529933,
+      "high": 13.697481928595485
+    },
+    {
+      "study": "fixed",
+      "update": 425,
+      "arm": "WM",
+      "gain": 14.78785355232974,
+      "low": 10.40363616567263,
+      "high": 19.165258153400544
+    },
+    {
+      "study": "fixed",
+      "update": 1000,
+      "arm": "WM",
+      "gain": 2.5299134750099297,
+      "low": -2.0327793186117638,
+      "high": 7.083540777371828
+    },
+    {
+      "study": "fixed",
+      "update": 10000,
+      "arm": "WM",
+      "gain": 12.236422362520724,
+      "low": 1.2925986946644827,
+      "high": 23.172369787490243
+    },
+    {
+      "study": "fixed",
+      "update": 100,
+      "arm": "Direct",
+      "gain": -1.1599762520280605,
+      "low": -4.579107841420339,
+      "high": 2.2103266150144267
+    },
+    {
+      "study": "fixed",
+      "update": 300,
+      "arm": "Direct",
+      "gain": 11.053741869774578,
+      "low": 7.2168776274981585,
+      "high": 15.028585430488414
+    },
+    {
+      "study": "fixed",
+      "update": 375,
+      "arm": "Direct",
+      "gain": 14.171255802249767,
+      "low": 9.832089562691005,
+      "high": 18.58168769403173
+    },
+    {
+      "study": "fixed",
+      "update": 425,
+      "arm": "Direct",
+      "gain": 19.776712490182337,
+      "low": 15.254761426385397,
+      "high": 24.378295562310857
+    },
+    {
+      "study": "fixed",
+      "update": 1000,
+      "arm": "Direct",
+      "gain": 0.7836086738521475,
+      "low": -3.881825430222688,
+      "high": 5.531295904169837
+    },
+    {
+      "study": "fixed",
+      "update": 10000,
+      "arm": "Direct",
+      "gain": 17.963914081097684,
+      "low": 7.4381460399821195,
+      "high": 28.65091369504748
+    },
+    {
+      "study": "fixed",
+      "update": 100,
+      "arm": "Random",
+      "gain": -2.974884843959333,
+      "low": -6.453609190916286,
+      "high": 0.4830715948683477
+    },
+    {
+      "study": "fixed",
+      "update": 300,
+      "arm": "Random",
+      "gain": 1.4410922207681183,
+      "low": -2.545086350616403,
+      "high": 5.388506330895481
+    },
+    {
+      "study": "fixed",
+      "update": 375,
+      "arm": "Random",
+      "gain": -0.02987723574253376,
+      "low": -4.230411363546498,
+      "high": 4.096777465594404
+    },
+    {
+      "study": "fixed",
+      "update": 425,
+      "arm": "Random",
+      "gain": 4.016634849894188,
+      "low": -0.17838080019920477,
+      "high": 8.202062851803374
+    },
+    {
+      "study": "fixed",
+      "update": 1000,
+      "arm": "Random",
+      "gain": -5.153660534260318,
+      "low": -9.305297641578356,
+      "high": -0.9890406076107663
+    },
+    {
+      "study": "fixed",
+      "update": 10000,
+      "arm": "Random",
+      "gain": 4.724700876580412,
+      "low": -4.7195136843619805,
+      "high": 14.232028752520499
+    },
+    {
+      "study": "natural",
+      "update": 100,
+      "arm": "WM",
+      "gain": 5.3499139231462935,
+      "low": 3.6846645909944424,
+      "high": 7.107557906130641
+    },
+    {
+      "study": "natural",
+      "update": 300,
+      "arm": "WM",
+      "gain": 8.728898610445079,
+      "low": 5.752888637194257,
+      "high": 11.759904383528948
+    },
+    {
+      "study": "natural",
+      "update": 375,
+      "arm": "WM",
+      "gain": 8.550722883532721,
+      "low": 5.827015694413785,
+      "high": 11.327651061015937
+    },
+    {
+      "study": "natural",
+      "update": 425,
+      "arm": "WM",
+      "gain": 8.089321764304476,
+      "low": 5.837806905629859,
+      "high": 10.36471900662462
+    },
+    {
+      "study": "natural",
+      "update": 1000,
+      "arm": "WM",
+      "gain": -0.42575250326829905,
+      "low": -1.0417386278669365,
+      "high": 0.11132484078421877
+    },
+    {
+      "study": "natural",
+      "update": 10000,
+      "arm": "WM",
+      "gain": -0.03357231903342359,
+      "low": -0.07404889637008669,
+      "high": 0.006740202982473078
+    },
+    {
+      "study": "natural",
+      "update": 100,
+      "arm": "Direct",
+      "gain": 9.367079465584872,
+      "low": 6.405806762520584,
+      "high": 12.363794129980544
+    },
+    {
+      "study": "natural",
+      "update": 300,
+      "arm": "Direct",
+      "gain": 18.03631075136395,
+      "low": 13.348510784634318,
+      "high": 22.636665364856007
+    },
+    {
+      "study": "natural",
+      "update": 375,
+      "arm": "Direct",
+      "gain": 15.837297458996746,
+      "low": 11.502250505623515,
+      "high": 20.16464577411145
+    },
+    {
+      "study": "natural",
+      "update": 425,
+      "arm": "Direct",
+      "gain": 11.746121144027706,
+      "low": 7.762643472349128,
+      "high": 15.657753609466928
+    },
+    {
+      "study": "natural",
+      "update": 1000,
+      "arm": "Direct",
+      "gain": -6.776295794171009,
+      "low": -8.653940960573292,
+      "high": -5.026214731461217
+    },
+    {
+      "study": "natural",
+      "update": 10000,
+      "arm": "Direct",
+      "gain": -5.965216946683907,
+      "low": -7.662660629633583,
+      "high": -4.433581626696508
+    },
+    {
+      "study": "natural",
+      "update": 100,
+      "arm": "Random",
+      "gain": 0.22435243251468467,
+      "low": -1.3260230970257663,
+      "high": 1.7623673852615749
+    },
+    {
+      "study": "natural",
+      "update": 300,
+      "arm": "Random",
+      "gain": -3.562063175077083,
+      "low": -6.245718876266509,
+      "high": -0.9157240580382005
+    },
+    {
+      "study": "natural",
+      "update": 375,
+      "arm": "Random",
+      "gain": -4.079524505026478,
+      "low": -6.576788235029296,
+      "high": -1.5612139035128425
+    },
+    {
+      "study": "natural",
+      "update": 425,
+      "arm": "Random",
+      "gain": -2.2684726160725455,
+      "low": -4.372678325115946,
+      "high": -0.19340367786124177
+    },
+    {
+      "study": "natural",
+      "update": 1000,
+      "arm": "Random",
+      "gain": -0.6410873585485667,
+      "low": -1.280598451646694,
+      "high": -0.15077207129800374
+    },
+    {
+      "study": "natural",
+      "update": 10000,
+      "arm": "Random",
+      "gain": 0.030657884901433067,
+      "low": -0.00802513608851277,
+      "high": 0.07049315098344718
+    }
+  ],
+  "support": {
+    "endpoint": {
+      "classification": "post hoc",
+      "N": 256,
+      "episodes": "separate from primary evaluations",
+      "policy": "BC1000",
+      "policy_interface": "original input, unlike corrected primary interface",
+      "selector": "actual simulated 20-step endpoint distance among nine candidate plans",
+      "reference": "unmodified plan executed for the same 20 steps",
+      "endpoint_gain_mm": 7.79,
+      "endpoint_ci95": [
+        7.145,
+        8.478
+      ],
+      "final_gain_mm": -3.677,
+      "final_ci95": [
+        -6.15,
+        -1.737
+      ]
+    },
+    "correspondence": {
+      "classification": "exploratory",
+      "N": 512,
+      "episodes": "reused primary states",
+      "acting_policy": "BC300",
+      "policy_descriptor": "BC300 five actions at eight probe states",
+      "aligned_gain_mm": 17.081,
+      "shuffled_gain_mm": 5.48,
+      "current_feature_gain_mm": 15.131,
+      "aligned_minus_shuffled_mm": 11.602,
+      "difference_ci95": [
+        7.371,
+        15.9
+      ],
+      "aligned_minus_current_mm": 1.951,
+      "aligned_minus_current_ci95": [
+        -0.955,
+        4.884
+      ],
+      "shuffling": "permute candidate-forecast correspondence in fitting and evaluation, retaining current/goal/action inputs"
+    },
+    "timing": {
+      "study": "primary natural execution",
+      "policy": "BC300",
+      "wm_seconds_per_episode": 1.00063,
+      "direct_seconds_per_episode": 0.057,
+      "scope": "candidate evaluation including rendering and encoding; physics paused"
+    }
+  },
+  "replays": [
+    {
+      "episode": 880102,
+      "errors": [
+        [
+          9.645958838010026,
+          45.940925152419446
+        ],
+        [
+          82.39045816282778,
+          79.74819715577755
+        ]
+      ],
+      "gain100": -36.29496631440942,
+      "gain300": 2.6422610070502373
+    },
+    {
+      "episode": 880316,
+      "errors": [
+        [
+          243.32111385158976,
+          127.33413525476792
+        ],
+        [
+          243.318271282714,
+          171.4863253375572
+        ]
+      ],
+      "gain100": 115.98697859682184,
+      "gain300": 71.8319459451568
+    }
+  ]
+}
