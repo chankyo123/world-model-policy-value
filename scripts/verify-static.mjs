@@ -44,7 +44,7 @@ for (const item of provenance.artifacts) {
   const content = readFileSync(join(out, item.file));
   assert.equal(createHash("sha256").update(content).digest("hex"), item.sha256, item.file);
 }
-assert.equal(provenance.artifacts.find(item => item.file === "downloads/poster.pdf").source, "CoRL53_POSTER_A0_V10.pdf");
+assert.equal(provenance.artifacts.find(item => item.file === "downloads/poster.pdf").source, "CoRL53_POSTER_A0_V11.pdf");
 assert.deepEqual(
   JSON.parse(readFileSync(join(root, "components/research/results.json"))),
   JSON.parse(readFileSync(join(out, "data/results.json"))),
